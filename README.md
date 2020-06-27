@@ -1,6 +1,6 @@
 vagrant-torrent
 ---
-Vagrantfile to set up a VM for torrenting.
+An Arch Linux VM for torrenting with qBittorrent.
 
 # Requirements
 - Vagrant
@@ -10,7 +10,7 @@ Vagrantfile to set up a VM for torrenting.
 # Operations Manual
 
 ## Setup
-- Put OpenVPN config in `config/vpn.ovpn`
+- Put OpenVPN config in `config/vpn-conf.ovpn`
 - Put OpenVPN password in `config/vpn-creds.txt`
   - The credentials file can be deleted after the VM is provisioned
 
@@ -24,4 +24,4 @@ Vagrantfile to set up a VM for torrenting.
 
 ## Cleanup
 - Run `vagrant destroy` to destroy the VM instance
-- If you want to delete the Arch Linux box, run `vagrant box remove archlinux/archlinux --all`
+- If you want to delete the Arch Linux box, run `vagrant box remove generic/arch --all`
