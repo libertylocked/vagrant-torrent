@@ -6,7 +6,7 @@
 *.log
 
 # Keep the keeps
-!.keep
+!.gitkeep
 
 # Mounted folder
 /downloads/*
