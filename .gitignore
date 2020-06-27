@@ -5,11 +5,11 @@
 *.logs
 *.log
 
-# Keep the keeps
-!.gitkeep
-
 # Mounted folder
 /downloads/*
 
 # User configs
 /config/*
+
+# Keep the keeps
+!.gitkeep
