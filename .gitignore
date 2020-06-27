@@ -1,0 +1,14 @@
+# General
+.vagrant/
+
+# Log files
+*.logs
+*.log
+
+# Mounted folder
+/downloads/*
+!/downloads/.keep
+
+# User configs
+/config/*
+!/config/*.keep
