@@ -2,17 +2,25 @@ vagrant-torrent
 ---
 An Arch Linux VM for torrenting with qBittorrent.
 
-# Requirements
+# Features
+- WebUI to manage torrents
+- qBittorrent binds on OpenVPN interface tun0
+  - In case VPN disconnects, torrents will stop too
+- `btw i use arch`
+
+# Operations Manual
+
+## Requirements
 - Vagrant
 - VirtualBox
   - HyperV is not supported yet, but maybe in the future?
 
-# Operations Manual
-
 ## Setup
 - Put OpenVPN config in `config/vpn-conf.ovpn`
+  - Please note that only TUN interface is supported at this moment (it should be `dev tun` in the file)
 - Put OpenVPN password in `config/vpn-creds.txt`
-  - The credentials file can be deleted after the VM is provisioned
+  - Put username on first line, password on second line
+  - The credentials file can be deleted once the VM is provisioned
 
 ## Usage
 - Run `vagrant up`
