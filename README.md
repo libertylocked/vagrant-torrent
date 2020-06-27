@@ -1,11 +1,15 @@
 vagrant-torrent
 ---
-An Arch Linux VM for torrenting with qBittorrent.
+An Arch Linux VM for torrenting with qBittorrent on OpenVPN.
 
 # Features
-- WebUI to manage torrents
 - qBittorrent binds on OpenVPN interface tun0
   - In case VPN disconnects, torrents will stop too
+- WebUI port forwarded to host, to manage torrents in browser
+- Portable qBittorrent config and data
+  - Saved in `downloads/.qbit`
+  - Never lose in-progress torrents when VM instance is destroyed
+  - You can even import your own config/data
 - `btw i use arch`
 
 # Operations Manual
@@ -13,7 +17,7 @@ An Arch Linux VM for torrenting with qBittorrent.
 ## Requirements
 - Vagrant
 - VirtualBox
-  - HyperV is not supported yet, but maybe in the future?
+  - Or Hyper-V, but it is not tested
 
 ## Setup
 - Put OpenVPN config in `config/vpn-conf.ovpn`
@@ -33,3 +37,11 @@ An Arch Linux VM for torrenting with qBittorrent.
 ## Cleanup
 - Run `vagrant destroy` to destroy the VM instance
 - If you want to delete the Arch Linux box, run `vagrant box remove generic/arch --all`
+
+# FAQ
+### Help I messed up my qBittorrent config
+To revert to default qBittorrent configs, follow these steps:
+
+- Shutdown VM with `vagrant halt`
+- Delete `downloads/.qbit`
+- Run `vagrant reload --provision`

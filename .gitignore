@@ -5,10 +5,11 @@
 *.logs
 *.log
 
+# Keep the keeps
+!.keep
+
 # Mounted folder
 /downloads/*
-!/downloads/.keep
 
 # User configs
 /config/*
-!/config/*.example
