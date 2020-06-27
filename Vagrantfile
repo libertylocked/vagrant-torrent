@@ -23,5 +23,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "bootstrap/bootstrap-system.sh"
   config.vm.provision "file", source: "bootstrap/copy_home", destination: "$HOME"
   config.vm.provision "shell", path: "bootstrap/bootstrap-user.sh", privileged: false
-  config.vm.provision "shell", path: "bootstrap/start-qbittorrent.sh"
+  config.vm.provision "shell", path: "bootstrap/start-qbittorrent.sh", run: "always"
 end
