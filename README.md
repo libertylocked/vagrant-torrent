@@ -28,7 +28,7 @@ An Arch Linux VM for torrenting with qBittorrent.
   - At the time of writing, it should be `admin:adminadmin`
 - Please change the default password in qBittorrent
 - Start adding torrents. The files should show up in `downloads` folder
-- Use `vagrant halt` to suspend the VM
+- Use `vagrant halt` to shutdown the VM
 
 ## Cleanup
 - Run `vagrant destroy` to destroy the VM instance
