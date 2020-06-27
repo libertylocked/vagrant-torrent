@@ -43,5 +43,16 @@ An Arch Linux VM for torrenting with qBittorrent on OpenVPN.
 To revert to default qBittorrent configs, follow these steps:
 
 - Shutdown VM with `vagrant halt`
-- Delete `downloads/.qbit`
+- Delete `downloads/.qbit` when the VM is powered off
 - Run `vagrant reload --provision`
+
+Note that you will lose all the torrents in the transfer list (but you won't lose the downloaded files).
+
+### I need to change my VPN config and/or my VPN credentials
+Just drop the new files into `config` folder and run `vagrant reload --provision`.
+
+### Torrents aren't downloading. Is my VPN working?
+- On host, run `vagrant ssh` to SSH into the VM
+- Run `ip addr` and see if there exists `tun0` interface
+  - If not, the VPN isn't working
+  - Pull up OpenVPN logs with `sudo journalctl -u openvpn-client@vpn-conf.service` for further diagnosis
