@@ -35,4 +35,6 @@ fi
 CFG_PORT=$(jq '.port' < $SETTINGS_FILE)
 sed -i "/^WebUI\\\\Port=/s/=.*/=$CFG_PORT/" $HOME/$REL_CONFIG_DIR/qBittorrent/qBittorrent.conf
 echo "Set qBittorrent WebUI port to $CFG_PORT"
-rm $SETTINGS_FILE
+
+# delete the configs so next reprovision won't use old configs
+rm -rf $HOME/.provision_config
