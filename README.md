@@ -56,3 +56,6 @@ Just drop the new files into `config` folder and run `vagrant reload --provision
 - Run `ip addr` and see if there exists `tun0` interface
   - If not, the VPN isn't working
   - Pull up OpenVPN logs with `sudo journalctl -u openvpn-client@vpn-conf.service` for further diagnosis
+
+### What is my external IP shown to peers?
+Check `downloads/.qbit/.local/share/data/qBittorrent/logs/qbittorrent.log` and look for the line "Detected external IP: xxx.xxx.xxx.xxx".
