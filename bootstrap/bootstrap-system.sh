@@ -1,7 +1,7 @@
 #!/bin/sh
 # install packages
 pacman -Sy
-pacman -S openvpn qbittorrent-nox python jq --noconfirm
+pacman -S openvpn qbittorrent-nox jq --noconfirm
 
 # setup vpn
 mv /home/vagrant/.provision_config/vpn-conf.ovpn /etc/openvpn/client/vpn-conf.conf
