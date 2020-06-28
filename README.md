@@ -32,7 +32,7 @@ Any changes to the config folder need a reprovision to take effect.
 
 ## Usage
 - Run `vagrant up`
-- Visit `http://localhost:8080` with default qBittorrent username and password
+- Visit `http://localhost:8080` (or the custom port you set) with default qBittorrent username and password
   - At the time of writing, it should be `admin:adminadmin`
 - Please change the default password in qBittorrent
 - Start adding torrents. The files should show up in `downloads` folder
