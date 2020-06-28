@@ -25,10 +25,14 @@ An Arch Linux VM for torrenting with qBittorrent on OpenVPN.
 - Put OpenVPN password in `config/vpn-creds.txt`
   - Put username on first line, password on second line
   - The credentials file can be deleted once the VM is provisioned
+- Optional: If you wish to change the port of the forwarded WebUI, create a `settings.json` in config
+  - You can try `cp ./config/settings.json.default ./config/settings.json` then edit the port
+
+Any changes to the config folder need a reprovision to take effect.
 
 ## Usage
 - Run `vagrant up`
-- Visit `http://localhost:18112` with default qBittorrent username and password
+- Visit `http://localhost:8080` with default qBittorrent username and password
   - At the time of writing, it should be `admin:adminadmin`
 - Please change the default password in qBittorrent
 - Start adding torrents. The files should show up in `downloads` folder

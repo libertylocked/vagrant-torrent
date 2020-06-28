@@ -9,7 +9,9 @@
 /downloads/*
 
 # User configs
-/config/*
+/config/vpn-conf.ovpn
+/config/vpn-creds.txt
+/config/settings.json
 
 # Keep the keeps
 !.gitkeep

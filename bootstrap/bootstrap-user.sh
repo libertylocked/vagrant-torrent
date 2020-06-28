@@ -26,3 +26,13 @@ if [ ! -f "$HOME/$REL_CONFIG_DIR/qBittorrent/qBittorrent.conf" ]; then
   echo "Copying qBittorrent default config"
   cp $HOME/.config_default/qBittorrent/qBittorrent.conf $HOME/$REL_CONFIG_DIR/qBittorrent
 fi
+
+# qbittorrent config patching
+SETTINGS_FILE="$HOME/.provision_config/settings.json"
+if [ ! -f $SETTINGS_FILE ]; then
+  SETTINGS_FILE="$SETTINGS_FILE.default"
+fi
+CFG_PORT=$(jq '.port' < $SETTINGS_FILE)
+sed -i "/^WebUI\\\\Port=/s/=.*/=$CFG_PORT/" $HOME/$REL_CONFIG_DIR/qBittorrent/qBittorrent.conf
+echo "Set qBittorrent WebUI port to $CFG_PORT"
+rm $SETTINGS_FILE
