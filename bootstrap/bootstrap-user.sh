@@ -29,12 +29,17 @@ fi
 
 # qbittorrent config patching
 SETTINGS_FILE="$HOME/.provision_config/settings.json"
+QBCONF=$HOME/$REL_CONFIG_DIR/qBittorrent/qBittorrent.conf
+IFACE=$(cat $HOME/.provision_config/iface)
+sed -i "/^Connection\\\\Interface=/s/=.*/=$IFACE/" $QBCONF
+sed -i "/^Connection\\\\InterfaceName=/s/=.*/=$IFACE/" $QBCONF
+echo "Set qBittorrent connection interface to $IFACE"
 if [ ! -f $SETTINGS_FILE ]; then
   SETTINGS_FILE="$SETTINGS_FILE.default"
 fi
-CFG_PORT=$(jq '.port' < $SETTINGS_FILE)
-sed -i "/^WebUI\\\\Port=/s/=.*/=$CFG_PORT/" $HOME/$REL_CONFIG_DIR/qBittorrent/qBittorrent.conf
-echo "Set qBittorrent WebUI port to $CFG_PORT"
+PORT=$(jq '.port' < $SETTINGS_FILE)
+sed -i "/^WebUI\\\\Port=/s/=.*/=$PORT/" $QBCONF
+echo "Set qBittorrent WebUI port to $PORT"
 
 # delete the configs so next reprovision won't use old configs
 rm -rf $HOME/.provision_config

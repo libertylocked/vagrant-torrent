@@ -5,13 +5,16 @@
 *.logs
 *.log
 
+# Editors
+.vscode/
+
 # Mounted folder
 /downloads/*
 
 # User configs
-/config/vpn-conf.ovpn
-/config/vpn-creds.txt
-/config/settings.json
+/config/*
+!/config/*.example
+!/config/*.default
 
 # Keep the keeps
 !.gitkeep

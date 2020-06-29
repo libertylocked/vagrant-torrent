@@ -32,10 +32,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "hyperv" do |h|
     h.memory = "1024"
+    h.cpus = 1
   end
 
   config.vm.provision "file", source: "config", destination: "$HOME/.provision_config"
-  config.vm.provision "shell", path: "bootstrap/disable-ipv6.sh"
   config.vm.provision "shell", path: "bootstrap/bootstrap-system.sh"
   config.vm.provision "file", source: "bootstrap/copy_home", destination: "$HOME"
   config.vm.provision "shell", path: "bootstrap/bootstrap-user.sh", privileged: false
