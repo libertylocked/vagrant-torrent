@@ -1,6 +1,6 @@
 vagrant-torrent
 ---
-An *Arch Linux* VM for torrenting with qBittorrent, on OpenVPN or WireGuard
+An Arch Linux VM for torrenting with qBittorrent, on OpenVPN or WireGuard
 
 # Features
 - qBittorrent binds on VPN interface only
