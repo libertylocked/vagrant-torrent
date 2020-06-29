@@ -43,6 +43,9 @@ Any changes to the config folder need a reprovision to take effect.
 - If you want to delete the Arch Linux box, run `vagrant box remove generic/arch --all`
 
 # FAQ
+### My OpenVPN config comes with a crt file
+Current this setup requires the CA cert to be embedded in the .ovpn file. Do a Google search on how to *embed certificate in ovpn file*.
+
 ### Help I messed up my qBittorrent config
 To revert to default qBittorrent configs, follow these steps:
 
