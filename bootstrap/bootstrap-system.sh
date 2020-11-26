@@ -30,6 +30,7 @@ elif [ -f /home/vagrant/.provision_config/ovpn0.ovpn ]; then
   mv /home/vagrant/.provision_config/ovpn0.ovpn /etc/openvpn/client/ovpn0.conf
   mv /home/vagrant/.provision_config/ovpn0-creds.txt /etc/openvpn/ovpn0-creds.txt
   chmod 400 /etc/openvpn/ovpn0-creds.txt
+  chown openvpn /etc/openvpn/ovpn0-creds.txt
   sed -i '/^auth-user-pass/d' /etc/openvpn/client/ovpn0.conf
   echo "" >> /etc/openvpn/client/ovpn0.conf
   echo "auth-user-pass /etc/openvpn/ovpn0-creds.txt" >> /etc/openvpn/client/ovpn0.conf
