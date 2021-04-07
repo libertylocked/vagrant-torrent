@@ -27,7 +27,8 @@ Vagrant.configure("2") do |config|
     vb.gui = false
     vb.memory = "1024"
     vb.cpus = 1
-    vb.customize ["modifyvm", :id, "--vram", "8"]
+    vb.customize ["modifyvm", :id, "--graphicscontroller", "none"]
+    vb.customize ["modifyvm", :id, "--vram", "0"]
   end
 
   config.vm.provider "hyperv" do |h|
